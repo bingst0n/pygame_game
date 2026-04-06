@@ -10,7 +10,7 @@ dt = 0
 basemovespeed=4
 
 # Player Movement and Logic
-player_pos = pygame.Vector2(5,5)
+player_pos = pygame.Vector2(0,0)
 
 # Setup Sprites
 playersprites = []
