@@ -1,8 +1,11 @@
 import pygame
 import csv
+import os
 import config
 
-spritesheet = pygame.image.load("assets/island/tiles.png").convert_alpha()
+base_path = os.path.dirname(__file__)
+
+spritesheet = pygame.image.load(os.path.join(base_path, "assets/island/tiles.png")).convert_alpha()
 tiles_per_row = spritesheet.get_width() // config.tilesize
 
 tile_cache = {}
@@ -34,8 +37,8 @@ def load_layer(path):
     open(path).close()
     return result
 
-layer1 = load_layer("assets/island/maplayer1.csv")
-layer2 = load_layer("assets/island/maplayer2.csv")
+layer1 = load_layer(os.path.join(base_path, "assets/island/maplayer1.csv"))
+layer2 = load_layer(os.path.join(base_path, "assets/island/maplayer2.csv"))
 #layer3 = load_layer("assets/island/maplayer3.csv")
 
 def get_layer1_index(x, y):

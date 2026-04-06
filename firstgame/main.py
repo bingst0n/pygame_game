@@ -1,4 +1,7 @@
 import pygame
+import os
+
+base_path = os.path.dirname(__file__)
 import config
 import tilemap
 import player

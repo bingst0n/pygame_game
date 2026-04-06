@@ -1,8 +1,11 @@
 import pygame
+import os
 import config
 import tilemap
 
-player_sheet = pygame.image.load("assets/player.png").convert_alpha()
+base_path = os.path.dirname(__file__)
+
+player_sheet = pygame.image.load(os.path.join(base_path, "assets/player.png")).convert_alpha()
 playersprites = []
 for i in range(4):
     sprite = player_sheet.subsurface(i * config.tilesize, 0, config.tilesize, config.tilesize)
