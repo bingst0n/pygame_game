@@ -4,6 +4,7 @@ import config
 import functions
 import player
 import tilemap
+import math
 
 # Necessary Init
 pygame.init()
@@ -22,9 +23,7 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
-
-    print(player.player_pos.x, player.player_pos.y)
-
+            
     config.screen.fill("black")
 
     keys = pygame.key.get_pressed()
@@ -42,7 +41,7 @@ while running:
         movespeed = basemovespeed
 
     # Update player and get current sprite
-    player_image = player.update_player(keys, dt, movespeed, normalizer, layer0)
+    player_image = player.update_player(keys, dt, movespeed, normalizer, layer1)
     
     # Calculate camera offset
     xoff = player.player_pos.x - startpos.x
